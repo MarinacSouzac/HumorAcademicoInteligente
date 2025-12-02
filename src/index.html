@@ -1,11 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Humor Acadêmico Inteligente</title>
+
+  <!-- Importa o CSS principal -->
+  <link rel="stylesheet" href="CSS/style.css" />
 </head>
+
 <body>
-    
+  <!-- Cabeçalho da página -->
+  <header>
+    <h1>Humor Acadêmico Inteligente</h1>
+  </header>
+
+  <main>
+
+    <!-- Seção onde aparecem os cartões de humores cadastrados -->
+    <section id="grid-section">
+      <h2>Humores</h2>
+      <!-- Os cards são inseridos dinamicamente via JavaScript -->
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <!-- Seção onde são exibidas as estatísticas dos humores -->
+    <section id="estatisticas-section">
+      <h2>Estatísticas</h2>
+      <!-- Os dados das estatísticas também são carregados pelo JavaScript -->
+      <div id="estatisticas" class="grid-estatisticas"></div>
+    </section>
+
+    <!-- Formulário para criar ou editar um humor -->
+    <section id="cadastro-section">
+      <h2>Criar Novo Humor</h2>
+
+      <form id="formHumor">
+
+        <!-- Linha contendo o nome do humor e as cores -->
+        <div class="form-row">
+          <div class="field">
+            <label for="humorInput">Nome do humor</label>
+            <input type="text" id="humorInput" required />
+          </div>
+
+          <!-- Campos de seleção de cores -->
+          <div class="field cores-field">
+            <label>Cores</label>
+            <input type="color" id="cor1" value="#ff0000" required />
+            <input type="color" id="cor2" value="#00ff00" />
+            <input type="color" id="cor3" value="#0000ff" />
+          </div>
+        </div>
+
+        <!-- Linha contendo frases e dicas de estudo -->
+        <div class="form-row">
+          <div class="field">
+            <label for="frasesInput">Frases</label>
+            <input type="text" id="frasesInput" placeholder="Separe por vírgula" required />
+          </div>
+
+          <div class="field">
+            <label for="dicasInput">Dicas de estudo</label>
+            <input type="text" id="dicasInput" placeholder="Separe por vírgula" required />
+          </div>
+        </div>
+
+        <!-- Linha contendo músicas e snacks -->
+        <div class="form-row">
+          <div class="field">
+            <label for="musicasInput">Músicas</label>
+            <input type="text" id="musicasInput" placeholder="Separe por vírgula" required />
+          </div>
+
+          <div class="field">
+            <label for="snacksInput">Snacks</label>
+            <input type="text" id="snacksInput" placeholder="Separe por vírgula" required />
+          </div>
+        </div>
+
+        <!-- Linha contendo emojis e metas rápidas -->
+        <div class="form-row">
+          <div class="field">
+            <label for="emojisInput">Emojis</label>
+            <input type="text" id="emojisInput" placeholder="Separe por vírgula" required />
+          </div>
+
+          <div class="field">
+            <label for="metasInput">Metas rápidas</label>
+            <input type="text" id="metasInput" placeholder="Separe por vírgula" required />
+          </div>
+        </div>
+
+        <!-- Campo de descanso -->
+        <div class="form-row">
+          <div class="field">
+            <label for="descansoInput">Descanso</label>
+            <input type="text" id="descansoInput" placeholder="Separe por vírgula" required />
+          </div>
+        </div>
+
+        <!-- Botão que envia o formulário -->
+        <button type="submit">Criar Humor</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal que exibe os detalhes de um humor quando clicado -->
+  <div id="resultado" class="modal hidden" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+
+      <!-- Botão "X" para fechar o modal -->
+      <span id="close" title="Fechar">&times;</span>
+
+      <!-- Título do humor selecionado -->
+      <h2 id="humor-title"></h2>
+
+      <!-- Listas contendo as informações do humor -->
+      <div class="listas">
+
+        <div>
+          <h3>Frases</h3>
+          <ul id="frasesList"></ul>
+        </div>
+
+        <div>
+          <h3>Dicas de estudo</h3>
+          <ul id="dicasList"></ul>
+        </div>
+
+        <div>
+          <h3>Músicas</h3>
+          <ul id="musicasList"></ul>
+        </div>
+
+        <div>
+          <h3>Snacks</h3>
+          <ul id="snacksList"></ul>
+        </div>
+
+        <div>
+          <h3>Emojis</h3>
+          <ul id="emojisList"></ul>
+        </div>
+
+        <div>
+          <h3>Metas rápidas</h3>
+          <ul id="metasList"></ul>
+        </div>
+
+        <div>
+          <h3>Descanso</h3>
+          <ul id="descansoList"></ul>
+        </div>
+
+        <div>
+          <h3>Cores</h3>
+          <!-- Quadradinhos das cores são colocados aqui via JavaScript -->
+          <div id="cores" class="cores-container"></div>
+        </div>
+      </div>
+
+      <!-- Ações para editar ou excluir o humor -->
+      <div class="modal-actions">
+        <button id="editarHumor">Editar</button>
+        <button id="deletarHumor">Excluir</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Importa o JavaScript principal -->
+  <script src="JS/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,309 @@
+/* ---------------------- */
+/* ESTILOS GERAIS */
+/* ---------------------- */
+
+/* Estilo do body */
+body {
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  margin: 0;                      /* Remove margin padrão */
+  padding: 0;                     /* Remove padding padrão */
+  background: #f5f5f5;            /* Cor de fundo da página */
+}
+
+/* Cabeçalho */
+header {
+  background: #6c63ff;            /* Cor de fundo do header */
+  color: #fff;                     /* Cor do texto */
+  text-align: center;              /* Centraliza o texto */
+  padding: 1rem;                   /* Espaçamento interno */
+}
+
+/* Títulos */
+h1, h2 {
+  margin: 0.5rem 0;                /* Margem superior e inferior */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte dos títulos */
+}
+
+/* Área principal */
+main {
+  padding: 1rem;                   /* Espaçamento interno */
+  max-width: 1200px;               /* Largura máxima */
+  margin: auto;                     /* Centraliza horizontalmente */
+}
+
+/* ---------------------- */
+/* GRID DOS CARDS */
+/* ---------------------- */
+
+/* Grid principal dos cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Colunas automáticas */
+  gap: 1rem;                    /* Espaçamento entre cards */
+}
+
+/* Cartões de humor */
+.card {
+  padding: 1rem;                 /* Espaçamento interno */
+  background: #1f1c5c;           /* Cor de fundo */
+  color: #fff;                   /* Cor do texto */
+  font-weight: bold;             /* Texto em negrito */
+  text-align: center;            /* Centraliza o texto */
+  border-radius: 10px;           /* Bordas arredondadas */
+  cursor: pointer;               /* Cursor de mão ao passar o mouse */
+  transition: transform 0.15s ease, box-shadow 0.15s ease; /* Animação suave */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* Sombra leve */
+}
+
+/* Efeito hover nos cards */
+.card:hover {
+  transform: translateY(-4px);             /* Leve elevação ao passar o mouse */
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12); /* Sombra maior */
+}
+
+/* ---------------------- */
+/* ESTATÍSTICAS */
+/* ---------------------- */
+
+/* Grid das estatísticas */
+.grid-estatisticas {
+  display: flex;
+  flex-wrap: wrap;           /* Quebra de linha se necessário */
+  gap: 1rem;                 /* Espaçamento entre cards */
+  margin-top: 1rem;          /* Espaço acima da seção */
+}
+
+/* Cartões de estatística */
+.stat-card {
+  background: #fff;          /* Fundo branco */
+  border-radius: 10px;       /* Bordas arredondadas */
+  border-color: #ca144b;     /* Cor da borda */
+  border-width: 3px;         /* Espessura da borda */
+  padding: 0.8rem;           /* Espaçamento interno */
+  flex: 1 1 200px;           /* Flexbox para largura mínima */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12); /* Sombra leve */
+}
+
+/* ---------------------- */
+/* FORMULÁRIO */
+/* ---------------------- */
+
+form {
+  background: #ffffff; /* fundo branco */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Linha do formulário */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Cada campo do formulário */
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Inputs e selects */
+.field input[type="text"] {
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-size: 0.95rem;
+}
+
+/* Foco no input */
+.field input[type="text"]:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+  outline: none;
+}
+
+/* ----------- CAMPOS DE CORES ----------- */
+.cores-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cores-field input[type="color"] {
+  width: 30px;  /* tamanho pequeno como antes */
+  height: 30px;
+  padding: 0;   /* remove padding extra */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botão */
+button[type="submit"] {
+  padding: 0.8rem 1.2rem;
+  background: #6c63ff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+  background: #574fd1;
+  transform: translateY(-2px);
+}
+/* ---------------------- */
+/* MODAL */
+/* ---------------------- */
+
+/* Oculta elementos */
+.hidden {
+  display: none !important;
+}
+
+/* Fundo do modal */
+.modal {
+  position: fixed;             /* Fixa na tela */
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* Fundo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;               /* Sobreposição */
+}
+
+/* Conteúdo interno do modal */
+.modal-content {
+  background: #fff;            /* Fundo branco */
+  padding: 1rem;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 10px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;           /* Scroll se conteúdo grande */
+}
+
+/* Título do modal */
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Botão de fechar modal */
+#close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ---------------------- */
+/* LISTAS DO MODAL */
+/* ---------------------- */
+
+/* Grid das listas dentro do modal */
+.listas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+/* Lista */
+.listas ul {
+  padding-left: 18px; /* Espaço para bullets */
+}
+
+/* Item da lista */
+.listas li {
+  margin-bottom: 0.4rem; /* Espaço entre itens */
+}
+
+/* Container de cores */
+.cores-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+/* Quadradinhos de cores */
+.cores-container div {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* ---------------------- */
+/* AÇÕES DO MODAL */
+/* ---------------------- */
+
+.modal-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Botões do modal */
+.modal-actions button {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Botão deletar */
+#deletarHumor {
+  background: #e74c3c;
+}
+
+#deletarHumor:hover {
+  background: #c0392b;
+}
+
+/* Botão editar */
+#editarHumor {
+  background: #f1c40f;
+  color: #111;
+}
+
+#editarHumor:hover {
+  filter: brightness(0.95);
+}
+
+/* ---------------------- */
+/* RESPONSIVO */
+/* ---------------------- */
+
+@media (max-width: 700px) {
+  .modal-content {
+    width: 95%;
+    padding: 0.8rem;
+  }
+
+  .listas {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
