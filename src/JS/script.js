@@ -1,6 +1,5 @@
-// ----------------------
+
 // CONFIGURAÇÕES INICIAIS
-// ----------------------
 
 // URL base da API
 const API = "http://localhost:3000";
@@ -45,9 +44,7 @@ const btnEditar = document.getElementById("editarHumor");
 const btnDeletar = document.getElementById("deletarHumor");
 
 
-// ----------------------
 // CARREGAR HUMORES
-// ----------------------
 
 // Busca todos os humores da API e cria os cards
 async function carregarHumores() {
@@ -64,9 +61,8 @@ async function carregarHumores() {
 }
 
 
-// ----------------------
+
 // CRIAR CARD DE HUMOR
-// ----------------------
 
 function criarCard(h) {
   const card = document.createElement("div"); // Cria div do card
@@ -83,9 +79,9 @@ function criarCard(h) {
 }
 
 
-// ----------------------
+
 // ABRIR MODAL DO HUMOR
-// ----------------------
+
 
 async function abrirHumor(id) {
   try {
@@ -137,18 +133,16 @@ function preencherLista(ul, arr = []) {
 }
 
 
-// ----------------------
 // FECHAR MODAL
-// ----------------------
+
 close.onclick = () => modal.classList.add("hidden"); // Fechar clicando no X
 window.onclick = e => {
   if (e.target === modal) modal.classList.add("hidden"); // Fechar clicando fora do modal
 };
 
 
-// ----------------------
 // ESTATÍSTICAS
-// ----------------------
+
 
 async function carregarEstatisticas() {
   try {
@@ -183,9 +177,8 @@ async function carregarEstatisticas() {
 }
 
 
-// ----------------------
 // BOTÃO EDITAR HUMOR
-// ----------------------
+
 
 btnEditar.addEventListener("click", async () => {
   if (!humorAtualId) return;
@@ -218,9 +211,8 @@ btnEditar.addEventListener("click", async () => {
 });
 
 
-// ----------------------
 // BOTÃO DELETAR HUMOR
-// ----------------------
+
 
 btnDeletar.addEventListener("click", async () => {
   if (!humorAtualId) return;
@@ -235,9 +227,8 @@ btnDeletar.addEventListener("click", async () => {
 });
 
 
-// ----------------------
 // SALVAR FORMULÁRIO (CRIAR OU EDITAR)
-// ----------------------
+
 
 formHumor.onsubmit = async e => {
   e.preventDefault();
@@ -306,9 +297,7 @@ formHumor.onsubmit = async e => {
 };
 
 
-// ----------------------
 // INICIALIZAÇÃO
-// ----------------------
 
 // Ao carregar a página, carrega os humores e estatísticas
 carregarHumores();
